@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="static/js/script.js"></script>
+    <!--<script type="text/javascript" src="static/js/script.js"></script>-->
 
     {% block head_js %}
     {% endblock head_js %}
@@ -35,7 +35,7 @@
                 </div>
                 <ul id="burger" class="nav navbar-nav collapse navbar-collapse navbar-right">
                     <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="travelinfo.html">About</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
                     
                     <li class="dropdown">
                     <a href="#" class="dropdown-hover" data-hover="dropdown">Fitness Classes <b class="caret"></b></a>
@@ -45,8 +45,8 @@
                     </ul>
                     </li>
                     
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Location</a></li>
+                    <li><a href="{% url 'forum' %}">Forum</a></li>
+                    <li><a href="{% url 'location' %}">Location</a></li>
                     <li><a href="#">Contact</a></li>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
@@ -58,28 +58,28 @@
                 </ul>
             </div>
         </nav>
-    
-                    {% if messages %}
-                        <div class="alert alert-success">
-                            <div class="messages">
-                                {% for message in messages %}
-                                    {{ message }}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% endif %}
 
-                    <!--blog entries-->
-                    {% block content %}
-                    {% endblock %}
-                    <!--blog entries-->
-           
-       
-    
-    <footer class="container-fluid">
-        <div class="row">
-          <div class="section">
-              <h3>Get in Touch</h3>
+        {% if messages %}
+            <div class="alert alert-success">
+                <div class="messages">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+        
+   <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+            <div class="foot-header">
+                  <h3>Get in Touch</h3>
+            </div>
+            <div class="foot-links">
               <p>Address: Block G, Smithfield Market, Smithfield, Dublin 7</p>
               <p>Tel: (01) 4850700/01</p>
               <p>Email: info@oneescape.ie</p>
@@ -89,19 +89,27 @@
                         <li><a target="_blank" href="#"><i class="fa fa-instagram" id="footersocial"></i></a></li>
                </ul>
               <p>© 2017 All Rights Reserved, 1escape Health Club </p>
+            </div>
+        </div>
+          <div class="col-sm-4">
+              <div class="foot-header">
+                  <h3>Opening Hours</h3>
+                </div>
+                <div class="foot-links">
+                  <p>Monday: 6:00am - 24:00pm</p>
+                  <p>Tuesday: 6:00am - 24:00pm</p>
+                  <p>Wednesday: 6:00am - 24:00pm</p>
+                  <p>Thursday: 6:00am - 24:00pm</p>
+                  <p>Friday: 6:00am - 10:00pm</p>
+                  <p>Saturday: 8:00am - 20:00pm</p>
+                  <p>Sunday: 8:00am - 20:00pm</p>
           </div>
-          <div class="section">
-              <h3>Opening Hours</h3>
-              <p>Monday: 6:00am - 24:00pm</p>
-              <p>Tuesday: 6:00am - 24:00pm</p>
-              <p>Wednesday: 6:00am - 24:00pm</p>
-              <p>Thursday: 6:00am - 24:00pm</p>
-              <p>Friday: 6:00am - 10:00pm</p>
-              <p>Saturday: 8:00am - 20:00pm</p>
-              <p>Sunday: 8:00am - 20:00pm</p>
-          </div>    
-          <div class="section">
+          </div>
+          <div class="col-sm-4">
+              <div class="foot-header">
               <h3>Location</h3>
+              </div>
+              <div class="foot-links">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.6482143835347!2d-6.280590684645931!3d53.349553182172755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670c2e86cecf97%3A0xb1efc7477340b492!2s1escape+Health+Club!5e0!3m2!1sen!2sie!4v1512078393836" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
         </div>
