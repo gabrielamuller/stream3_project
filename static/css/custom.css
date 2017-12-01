@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700');
+
+/*------------------------------------------------Navbar*/
+.navbar-default {
+    min-height: 80px;
+    margin-bottom: 0px;
+}
+
+.navbar-nav {
+    margin-top: 30px;
+    font-family: Roboto;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.navbar  {
+    background-color: #171717;
+    font-size: 16px;
+}
+
+.dropdown-menu {
+   background-color: #171717; 
+   color: #6D6D6D;
+   padding: 10px;
+}
+
+#dropdowntext {
+    color: #6D6D6D;
+    font-size: 14px;
+}
+
+/*------------------------------------------------Footer*/
+ footer {
+    background-color: #171717;
+    color: #fafafa;
+    padding: 0;
+    margin: 0;
+    min-height: 50px;
+    width: 100%;
+}
+
+.social-footer li a i{
+    width: 30px;
+    height: 30px;
+    padding: 10px 0;
+    border-radius: 50%;
+    font-size: 14px;
+    text-align: center;
+    color: #fafafa;
+}
+
+#footersocial {
+    background-color: #6D6D6D;
+}
+
+#footersocial:hover { 
+    background-color: #c1bfbf;
+}
+
+.section{
+    float: left;
+    width: 33%;
+    height: 100%;
+}
+
+.section1{
+    float: left;
+    width: 33%;
+    height: 100%;
+    margin: 20px;
+}
+
+
+/*------------------------------------------------Home*/
+.parallax,
+.parallax2,
+.parallax3 {
+    height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+.parallax { 
+    background-image: url("/static/img/bg1.jpg");
+}
+
+.parallax2 { 
+    background-image: url("/static/img/bg2.jpg");
+}
+
+.parallax3 { 
+    background-image: url("/static/img/bg3.png");
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 50%;
+    text-align: center;
+    color: #000;
+}
+
+.caption2 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 50%;
+    text-align: center;
+    color: #000;
+}
+
+#homecaption {
+    background-color: rgba(204, 204, 204, 0.5);
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+
+
