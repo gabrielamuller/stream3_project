@@ -26,6 +26,9 @@ from home.views import get_index
 #from .settings import MEDIA_ROOT
 from threads import views as forum_views
 from django.views.generic import TemplateView
+from contact.views import contact
+
+
 
 
 
@@ -41,7 +44,12 @@ urlpatterns = [
     url(r'^post/edit/(?P<thread_id>\d+)/(?P<post_id>\d+)/$',forum_views.edit_post, name='edit_post'),
     url(r'^post/delete/(?P<thread_id>\d+)/(?P<post_id>\d+)/$', forum_views.delete_post, name='delete_post'),
     url(r'^about', TemplateView.as_view(template_name='about.html'),name='about'),
-    url(r'^location', TemplateView.as_view(template_name='location.html'),name='location'), 
+    url(r'^location', TemplateView.as_view(template_name='location.html'),name='location'),
+    url(r'^class_descriptions', TemplateView.as_view(template_name='class_descriptions.html'),name='descriptions'),
+    url(r'^contact/', contact, name='contact'),
+
+    #url(r'^$', ContactFormView.as_view(), name='contact_form'),
+    #url(r'^sent/$', TemplateView.as_view(template_name='contact_form/contact_form_sent.html'), name='contact_form_sent'),
     #url(r'^products/', include(urls_products)),
     #url(r'^cart/', include(urls_cart)),
     #url(r'^checkout/', include(urls_checkout)),

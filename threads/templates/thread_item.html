@@ -1,13 +1,8 @@
-  <div class="col-sm-12 thread-list">
-                    <div  class="row ">
-                        
-                            <div class="col-md-12 thread-list-item" >
-                            
-<a href="{% url 'thread' thread.id %}">
-    <h4>{{ thread.name }}</h4>
- 
- </a>
+<div class="col-sm-12 thread-list">
+    <div  class="row ">
+        <div class="col-md-12">
+            <a href="{% url 'thread' thread.id %}"><h4>{{ thread.name }}</h4></a>
+        </div>
+    </div>
 </div>
-                    </div>
-                </div><!-- End col-sm-12 inside of col-sm-9 -->
 

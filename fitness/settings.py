@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'accounts',
     'home',
     'threads',
+    'contact',
 ]
 
 #INTERNAL_IPS = ('127.0.0.1',)

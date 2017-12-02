@@ -110,5 +110,6 @@
     text-transform: uppercase;
 }
 
-
-
+.location {
+    padding-right: 100px;
+}
