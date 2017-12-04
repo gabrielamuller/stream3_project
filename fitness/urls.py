@@ -36,6 +36,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_index, name='index'),
     url(r'^accounts/', include(urls_accounts)),
+    
+    #Forum
     url(r'^forum/$', forum_views.forum, name='forum'),
     url(r'^threads/(?P<subject_id>\d+)/$', forum_views.threads, name='threads'),
     url(r'^new_thread/(?P<subject_id>\d+)/$',  forum_views.new_thread, name='new_thread'),
@@ -43,6 +45,8 @@ urlpatterns = [
     url(r'^post/new/(?P<thread_id>\d+)/$', forum_views.new_post, name='new_post'),
     url(r'^post/edit/(?P<thread_id>\d+)/(?P<post_id>\d+)/$',forum_views.edit_post, name='edit_post'),
     url(r'^post/delete/(?P<thread_id>\d+)/(?P<post_id>\d+)/$', forum_views.delete_post, name='delete_post'),
+
+    
     url(r'^about', TemplateView.as_view(template_name='about.html'),name='about'),
     url(r'^location', TemplateView.as_view(template_name='location.html'),name='location'),
     url(r'^class_descriptions', TemplateView.as_view(template_name='class_descriptions.html'),name='descriptions'),

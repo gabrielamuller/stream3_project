@@ -153,3 +153,13 @@ STATICFILES_DIRS = (
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SYSTEM_EMAIL="admin@example.com"
+
+EMAIL_USE_TLS = True       
+EMAIL_HOST = 'smtp.gmail.com'      
+EMAIL_PORT = 587     
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')     
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')

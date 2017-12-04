@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
+{% load static from staticfiles %}
 <div class="container">
     <form method="post" action="{% url 'register' %}" class="accountform">
         <fieldset class="form-group">

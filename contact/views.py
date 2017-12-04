@@ -26,21 +26,23 @@ def contact(request):
             content = template.render(context)
             
             subject = 'Thanks for getting in touch!'
-            message = 'Thank you for contacting Urban Surf. We will get back to you as soon as we can'
-            from_email = settings.EMAIL_HOST_USER
-            to_email = [contact_email]
+            message = 'Thank you for contacting 1escape. We will get back to you as soon as we can'
+            from_email = settings.SYSTEM_EMAIL
+            to_email = [request.user.email]
+            #from_email = settings.EMAIL_HOST_USER
+            #to_email = [contact_email]
 
             send_mail(subject,message,from_email,to_email,fail_silently=True)
 
-            email = EmailMessage(
-                "New contact form message",
-                content,
-                "Your website" +'',
-                ['admin@example.com'],
-                headers = {'Reply-To': contact_email }
-            )
-            email.send()
-            messages.success(request, 'We have recieved your email & will get back to you as soon as possible!')
+            #email = EmailMessage(
+                #"New contact form message",
+                #content,
+                #"Your website" +'',
+                #['admin@example.com'],
+                #headers = {'Reply-To': contact_email }
+            #)
+            #email.send()
+            messages.success(request, 'We have received your email & will get back to you as soon as possible!')
             return redirect('index')
 
     return render(request, 'contact.html', {
