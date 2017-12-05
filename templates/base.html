@@ -13,6 +13,8 @@
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/script.js"></script>
+    
+
 
     {% block head_js %}
     {% endblock head_js %}
@@ -39,7 +41,8 @@
                     <a href="#" class="dropdown-hover" data-hover="dropdown">Fitness Classes <b class="caret"></b></a>
                     <ul class="dropdown-menu dropdown-hover">
                         <li><a href="{% url 'descriptions' %}" id="dropdowntext">Class Descriptions</a></li>
-                        <li><a href="#" id="dropdowntext">Class Timetable</a></li>
+                        <li><a href="{% url 'class_timetable' %}" id="dropdowntext">Class Timetable</a></li>
+                        <li><a href="{% url 'courses' %}" id="dropdowntext">Courses</a></li>
                     </ul>
                     </li>
                     

@@ -18,8 +18,8 @@ from django.contrib import admin
 from accounts import urls as urls_accounts
 #from home import urls as urls_home
 #from products import urls as urls_products
-#from cart import urls as urls_cart
-#from checkout import urls as urls_checkout
+from cart import urls as urls_cart
+from checkout import urls as urls_checkout
 #from products.views import all_products
 from django.views import static
 from home.views import get_index
@@ -28,6 +28,9 @@ from threads import views as forum_views
 from django.views.generic import TemplateView
 from contact.views import contact
 
+from products import urls as urls_products
+from products.views import product_list
+from products import urls as product_urls
 
 
 
@@ -49,13 +52,21 @@ urlpatterns = [
     
     url(r'^about', TemplateView.as_view(template_name='about.html'),name='about'),
     url(r'^location', TemplateView.as_view(template_name='location.html'),name='location'),
+    url(r'^class_timetable', TemplateView.as_view(template_name='class_timetable.html'),name='class_timetable'),
     url(r'^class_descriptions', TemplateView.as_view(template_name='class_descriptions.html'),name='descriptions'),
     url(r'^contact/', contact, name='contact'),
+    
+    url(r'^courses/', product_list, name='courses'),
+    url(r'^cart/', include(urls_cart)),
+    #url(r'^class_timetable/', include(product_urls)),
 
     #url(r'^$', ContactFormView.as_view(), name='contact_form'),
     #url(r'^sent/$', TemplateView.as_view(template_name='contact_form/contact_form_sent.html'), name='contact_form_sent'),
-    #url(r'^products/', include(urls_products)),
-    #url(r'^cart/', include(urls_cart)),
-    #url(r'^checkout/', include(urls_checkout)),
+    
+    #url(r'^class_timetable', product_list, name='class_timetable'),
+   
+
+    
+    url(r'^checkout/', include(urls_checkout)),
     #url(r'^media/(?P<path>.*)$', static.serve,{'document_root': MEDIA_ROOT}),
 ]

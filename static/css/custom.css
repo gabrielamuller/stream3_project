@@ -114,6 +114,63 @@
     padding-right: 100px;
 }
 
+/*------------------------------------------------Contact*/
+
 .contactform {
     padding: 20px;
 }
+
+/*------------------------------------------------Class Timetable*/
+
+#week-navigation-list {
+    text-align: center;
+}
+
+
+#week-navigation-list {
+    margin: 0;
+    padding: 0;
+}
+
+#weekday {
+    display: inline;
+}
+
+#week-navigation a {
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    color: #fff;
+    display: inline;
+    padding: 2px 1vw 2px 1vw;
+    background-color: #6D6D6D;
+    font-size: 1.5em;
+    vertical-align: middle;
+    outline: none;
+  
+}
+
+#classname {
+    font-family: Roboto;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #ff8b04;
+}
+
+#quantity {
+    margin-bottom: 10px;
+}
+
+.cart_button {
+    color: #ffffff;
+    background-color: #70044D;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33333;
+    border-radius: 6px;
+    font-size: 1.5em;
+}
+
+.cartbutton {
+    margin-top: 10px;
+}
+

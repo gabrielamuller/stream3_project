@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'home',
     'threads',
     'contact',
+    'products',
+    'cart',
+    'checkout',
 ]
 
 #INTERNAL_IPS = ('127.0.0.1',)
@@ -76,7 +79,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-
+                'cart.contexts.cart_contents'
     
             ],
         },
@@ -163,3 +166,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587     
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')     
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE_KEY', 'pk_test_obT7kpSPIlYzkjIdbzxCbdj0')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET_KEY', 'sk_test_ZRWtuQR1RlPMZLHh5MobGQTY')
