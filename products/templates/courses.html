@@ -2,14 +2,15 @@
 {% load static from staticfiles %}
 {% block content %}
 <div class="container">
-  <div class="col-md-3 cartbutton">                                                                  
+  <div class="col-md-6 cartbutton">                                                                  
     <a class="cart_button" href="{% url 'view_cart' %}">
         <i class="fa fa-shopping-cart "></i> Cart 
         {% if product_count > 0 %}
         <label class="badge badge-warning">{{ product_count }}</label>
         {% endif %}
     </a>
-  </div>                  
+  </div>  
+  <div class="col-md-12">
    <table class="table table-striped">
        <thead>
        <tr>
@@ -37,5 +38,6 @@
        {% endfor %}
        </tbody>
    </table>
+   </div>
 </div>   
 {% endblock %}
