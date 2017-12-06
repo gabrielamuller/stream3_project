@@ -42,7 +42,7 @@
 .social-footer li a i{
     width: 30px;
     height: 30px;
-    padding: 10px 0;
+    padding: 9px 0;
     border-radius: 50%;
     font-size: 14px;
     text-align: center;
@@ -128,7 +128,7 @@
 
 
 #week-navigation-list {
-    margin: 0;
+    margin-top: 20px;
     padding: 0;
 }
 
@@ -156,6 +156,13 @@
     color: #ff8b04;
 }
 
+.fa-arrow-circle-o-up {
+    color: #70044D;
+    font-size: 30px;
+}
+
+/*------------------------------------------------Courses*/
+
 #quantity {
     margin-bottom: 10px;
 }
@@ -164,11 +171,46 @@
     color: #ffffff;
     background-color: #70044D;
     padding: 10px 16px;
-    font-size: 18px;
     line-height: 1.33333;
     border-radius: 6px;
     font-size: 1.5em;
 }
+
+.cartbutton {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+   background-color: #70044D; 
+}
+/*------------------------------------------------Forum*/
+
+.subject_name {
+    color: #70044D;
+}
+
+.subject_description {
+    color: black;
+}
+
+.thread {
+    color: black; 
+    padding: 10px; 
+    background-color: #FBFBFB;
+    border-left: 6px solid #70044D;
+    
+}
+
+.thread:hover{
+   background-color: #e3e4e5;
+}
+ 
+
+
+
+
+
 
 
 
