@@ -3,42 +3,56 @@
 {% load static from staticfiles %}
 {% block content %}
  
- <div class="row header">
- 
-   <div class="container">
-     <h2>{{ thread.name }}</h2>
-     <div class="col-md-12">
-         <table class="table">
-             <tbody>
-             <tr>
-                 <th>
-                   CREATED
-                 </th>
-                 <th>OWNER</th>
-                 <th>LAST POST</th>
-             </tr>
-             <tr>
-                 <td>
-                   <time datetime="{{ thread.created_at }}">
-                    {{ thread.created_at|started_time }}
-                   </time>
-                 </td>
+<div class="container">
+    <div class="row thread-list">
+      <div class="col-sm-3">
+        <h2>{{ thread.name }}</h2>
+           <table class="table">
+               <tbody>
+               <tr>
+                   <th>CREATED</th>
+                   <th>OWNER</th>
+                   <th>LAST POST</th>
+               </tr>
+      </div>
+         <div class="col-sm-3">
+          <tr>
+              <td>
+               <time datetime="{{ thread.created_at }}">
+                {{ thread.created_at|started_time }}
+               </time>
+             </td>
                  <td>{{ thread.user.username }}</td>
                  <td>{% last_posted_user_name thread %}</td>
              </tr>
            </tbody>
          </table>
      </div>
-     {% if user.is_authenticated %}
-       <p>
-         <a href="{% url 'new_post' thread.id %}" class="btn btn-primary">New post</a>
-       </p>
-     {% endif %}
-   </div>
- </div>
- <div class="container">
+     
+      <div class="col-sm-9">
+       <div class="row">
+        <div class="col-sm-3">
+                    <hr>
+                    <h3>Log in to post.
+                </div>
+            {% if user.is_authenticated %}
+                <div class="col-sm-3 ">
+                   <hr>
+                    <h3>Create a new post.</h3>
+                    <p><a href="{% url 'new_post' thread.id %}" class="btn btn-primary">New post</a></p>
+         
+      </div>
+       {% endif %}
+       </div>
+       </div>
+       </div>
+      
+
+ <div class="container post_container">
    {% for post in thread.posts.all %}
      {% include "post.html" %}
    {% endfor %}
+ </div>
+ </div>
  </div>
 {% endblock %}

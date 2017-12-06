@@ -17,7 +17,7 @@
         <tbody>
         {% for item in cart_items %}
             <tr>
-                <td>{{ item.product.name }}</td>
+                <td class="course-name">{{ item.product.name }}</td>
                 <td>{{ item.product.description }}</td>
                 <td>{{ item.quantity }}</td>
                 <td>{{ item.product.price }}</td>
@@ -25,7 +25,7 @@
                     <form method="post" action="{% url 'adjust_cart' item.id %}">
                         {% csrf_token %}
                         Quantity
-                        <input name='quantity' type="number" min="0" max="999">
+                        <input id="quantity" name='quantity' type="number" min="0" max="999">
                         <button type="submit">Adjust</button>
                     </form>
                 </td>

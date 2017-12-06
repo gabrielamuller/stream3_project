@@ -15,12 +15,14 @@ def contact(request):
         if form.is_valid():
             contact_name = request.POST.get('contact_name', '')
             contact_email = request.POST.get('contact_email', '')
+            contact_number = request.POST.get('contact_number', '')
             form_content = request.POST.get('content', '')
 
             template=get_template('contact_template.txt')
             context = {
                 'contact_name': contact_name,
                 'contact_email': contact_email,
+                'contact_number': contact_number,
                 'form_content': form_content,
             }
             content = template.render(context)

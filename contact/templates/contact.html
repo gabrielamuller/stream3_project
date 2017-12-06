@@ -5,16 +5,32 @@
 
 {% block content %}
 <div class="container">
-<div class="row">
+    <div class="row">
         <div class="col-sm-6 contactform">
-            <legend>Contact Form</legend>
+            <h1 class="header">Why join?</h1>
+            <p>Your health is your single greatest asset. At 1escape we inspire people by helping them to achieve their goals through our training methods, programs and philosophies. We strive to offer the ultimate personal ‘escape’ by consistently providing a high level of service, and by making each experience personal to you and your goals.</p>
+            <p>From the beginning, a personal trainer in Dublin will work out a plan with you to ensure you reach your goals. Simply contact us today and we will guide you every step of the way. If you have not yet visited 1escape, we would be delighted to give you a tour of our facilities and fitness classes in Dublin to discuss our membership options with you in more detail. Simply complete the adjacent enquiry form or click below for a call back or club tour. Alternatively you can call us on 01 4850700 and we would be delighted to answer any queries you may have.</p>
+            <h1 class="header">Benefits of membership</h1>
+            <ul>
+                <li>No 12 month contract</li>
+                <li>Option to freeze</li>
+                <li>Unlimited access to over 70 studio classes per week</li>
+                <li>Complimentary Body Composition Reports</li>
+                <li>REPS registered fitness trainers</li>
+                <li>Hydrorider – aqua cycling exclusive to 1escape</li>
+                <li>Escape into shape 6-week shape up program</li>
+                <li>Program updates every 4 weeks</li>
+            </ul>
+        </div>
+        <div class="col-sm-6 contactform">
+            <legend class="legend-top">Contact Form</legend>
             <form role="form" action="{% url 'contact' %}" method="POST">
                 {% csrf_token %}
                 {{ form | as_bootstrap }}
                 <button class="btn btn-primary" type="submit">Submit</button>
             </form>
         </div>
-</div>
+    </div>
 </div>
 
 {% endblock %}
