@@ -140,16 +140,16 @@ To False
 }
 
 ```
-16. In the terminal:
+17. In the terminal:
     `$ python3 manage.py make migrations` 
     `$ python3 manage.py migrate` 
 
-16. Log in to the admin panel by going to /admin & log in using the credentials you created for the superuser.
-12. You can add products, users, subjects, posts and threads.
+18. Log in to the admin panel by going to /admin & log in using the credentials you created for the superuser.
+19. You can add products, users, subjects, posts and threads.
 
 ## Running the tests
 
 Automated tests can be viewed in the tests.py file within the separate Apps. 
-To run the tests type in your terminal:
+To run the tests, type in your terminal:
 
 `$ python3 manage.py test <app name>`
