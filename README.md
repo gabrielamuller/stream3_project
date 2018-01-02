@@ -91,9 +91,13 @@ Follow the below instructions to clone this project for c9
 3. Create a Django project:
     `$ django-admin startproject fitness .`
 4. Create an alias for ‘run’ in .bash_aliases:
+```
     alias run="python3 ~/workspace/manage.py runserver $IP:$C9_PORT"
+```
 5. Create a SECRET_KEY environment variable in .bashrc:
+```
     export SECRET_KEY="<secret key goes here>"
+```
 6. Run the project:
     `$ run`
 7. Take the host name from the error and add to Allowed Hosts in settings.py
@@ -112,14 +116,11 @@ Follow the below instructions to clone this project for c9
 12. Install the project dependancies
 13. Add to .bashrc:
     ```
-    export DATABASE_URL=""
-    export AWS_ACCESS_KEY_ID=
-    export AWS_SECRET_ACCESS_KEY=
     export STRIPE_PUBLISHABLE_KEY=""
     export STRIPE_SECRET_KEY=""
     ```
   
-14. Set up an account with Stripe [here](https://stripe.com/gb) & input STRIPE_PUBLISHABLE_KEY & STRIPE_SECRET_KEY. Add the database details.
+14. Set up an account with Stripe [here](https://stripe.com/gb) & input STRIPE_PUBLISHABLE_KEY & STRIPE_SECRET_KEY.
 15. In settings.py change:
 ```
 USE_S3 = os.environ.get("USE_S3", True)
@@ -127,7 +128,7 @@ USE_S3 = os.environ.get("USE_S3", True)
 
 To False
 
-16. And change:
+16. And change to this:
 ```
     # DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
     
@@ -143,12 +144,12 @@ To False
     `$ python3 manage.py make migrations` 
     `$ python3 manage.py migrate` 
 
-16. Log in to the admin panel by going to /admin & log in using the credentials you created for the superuser
-12. You can add products, users, subjects, posts and threads
+16. Log in to the admin panel by going to /admin & log in using the credentials you created for the superuser.
+12. You can add products, users, subjects, posts and threads.
 
 ## Running the tests
 
 Automated tests can be viewed in the tests.py file within the separate Apps. 
-To run the tests, in your terminal navigate to the folder with your project in, activate your virtual environment and type:
+To run the tests, in your terminal navigate to the folder with your project in and type:
 
 `$ python3 manage.py test <app name>`
