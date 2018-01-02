@@ -150,6 +150,6 @@ To False
 ## Running the tests
 
 Automated tests can be viewed in the tests.py file within the separate Apps. 
-To run the tests, in your terminal navigate to the folder with your project in and type:
+To run the tests type in your terminal:
 
 `$ python3 manage.py test <app name>`
